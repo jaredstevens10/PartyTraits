@@ -169,7 +169,7 @@ class CreateTraitViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
-    func googleImage(_ notification:Notification) {
+    @objc func googleImage(_ notification:Notification) {
         
         let data = (notification as NSNotification).userInfo
         let googleImageData2 = data!["data"] as! Data
@@ -246,7 +246,7 @@ class CreateTraitViewController: UIViewController, UIImagePickerControllerDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func segmentValueChanged(_ sender: AnyObject?){
+    @objc func segmentValueChanged(_ sender: AnyObject?){
         
         if segmentControl.selectedIndex == 0 {
             leveldata = "Easy"
@@ -286,7 +286,7 @@ class CreateTraitViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
-    func DismissKeyboard(){
+    @objc func DismissKeyboard(){
         
         view.endEditing(true)
     }
@@ -808,9 +808,11 @@ class CreateTraitViewController: UIViewController, UIImagePickerControllerDelega
         print("POST OLD DATA = \(post_old)")
         
         
+        //swift 3
+        //var post = post_old.addingPercentEscapes(using: String.Encoding.utf8)!
         
-        var post = post_old.addingPercentEscapes(using: String.Encoding.utf8)!
-        
+        //swift 4
+        var post = post_old.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         
         
         post = ("\(post)&ImageData=\(ProfileImageFinal)")

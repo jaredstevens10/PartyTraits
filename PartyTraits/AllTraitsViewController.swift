@@ -392,7 +392,7 @@ func reversePhotoArray(photoArray:[TraitInventoryLimitedHidden], startIndex:Int,
     
     
     
-    func UpdateStatusTraitClicked(_ sender: UIButton!) {
+    @objc func UpdateStatusTraitClicked(_ sender: UIButton!) {
         
         //let TempSelectedTrait = TraitInventory()
         

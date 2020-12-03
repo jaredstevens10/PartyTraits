@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         level = "Medium"
        // leveldata = "Medium"
         if let font = UIFont(name: "Noteworthy", size: 25.0) {
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.white]
+            self.navigationController!.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.white]
         }
         
         navigationController!.navigationBar.barTintColor = UIColor.black
@@ -170,7 +170,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    func UpdateDownloadProgress2(_ notification:Notification) {
+    @objc func UpdateDownloadProgress2(_ notification:Notification) {
         
         print("updating download progress")
         
@@ -240,7 +240,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         if ViewDifView {
             if let swipeGesture = gesture as? UISwipeGestureRecognizer {
                 switch swipeGesture.direction {
@@ -1127,7 +1127,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    func DismissKeyboard(){
+    @objc func DismissKeyboard(){
         view.endEditing(true)
     }
     
@@ -1186,7 +1186,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
-    func segmentValueChanged(_ sender: AnyObject?){
+    @objc func segmentValueChanged(_ sender: AnyObject?){
         
         if segmentControl.selectedIndex == 0 {
             leveldata = "Easy"
@@ -1221,7 +1221,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    func segmentValueChangedType(_ sender: AnyObject?){
+    @objc func segmentValueChangedType(_ sender: AnyObject?){
         
         if segmentControlType.selectedIndex == 0 {
             gameType = "FreePlay"

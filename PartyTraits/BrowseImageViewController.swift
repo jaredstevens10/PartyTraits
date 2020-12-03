@@ -205,7 +205,7 @@ class BrowseImageViewController: UIViewController, UIWebViewDelegate, UIGestureR
     
     
     //   func tapAction(sender: UITapGestureRecognizer) {
-    func LongPressAction(_ sender: UILongPressGestureRecognizer) {
+    @objc func LongPressAction(_ sender: UILongPressGestureRecognizer) {
         let point = sender.location(in: self.view)
         
         let currentURL = self.webView2.request!.url?.absoluteString
@@ -778,7 +778,7 @@ class BrowseImageViewController: UIViewController, UIWebViewDelegate, UIGestureR
     
     
     
-    func handleTap(_ recognizer: UITapGestureRecognizer) {
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
         
         // let snipTemp = self.snipView.pb_takeSnapshot()
         // self.snippedPic.image = snipTemp

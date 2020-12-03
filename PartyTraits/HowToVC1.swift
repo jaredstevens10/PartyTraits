@@ -28,8 +28,8 @@ class HowToVC1: UIViewController {
         print("on howtovc viewdidload")
         
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: (UIFont(name: "Noteworthy", size: 25.0))!,
-            NSForegroundColorAttributeName : UIColor.white
+            NSAttributedStringKey.font: (UIFont(name: "Noteworthy", size: 25.0))!,
+            NSAttributedStringKey.foregroundColor : UIColor.white
         ]
         
         pageTitle.text = pageTitles as String

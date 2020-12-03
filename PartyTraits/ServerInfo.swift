@@ -20,7 +20,9 @@ class ServerInfo {
     class var sharedInstance: String {
         struct Static {
             //static let instance = ServerInfo()
-            static let instance = "97.102.18.39"
+            
+            //static let instance = "97.102.15.46"
+            static let instance = "www.meganonmainstreet.com"
 
         }
         return Static.instance

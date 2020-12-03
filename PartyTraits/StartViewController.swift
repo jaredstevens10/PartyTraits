@@ -101,7 +101,7 @@ class StartViewController: UIViewController {
         self.title = "Party Traits"
         
         if let font = UIFont(name: "Noteworthy", size: 25.0) {
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.white]
+            self.navigationController!.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.white]
         }
         navigationController!.navigationBar.barTintColor = UIColor.black
             
@@ -149,7 +149,7 @@ class StartViewController: UIViewController {
     }
     
  
-    func UpdateDownloadProgress(_ notification:Notification) {
+    @objc func UpdateDownloadProgress(_ notification:Notification) {
         
        print("updating download progress")
         

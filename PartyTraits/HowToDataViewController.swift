@@ -24,8 +24,8 @@ class HowToDataViewController: UIViewController, UIPageViewControllerDataSource,
        print("on how to date view did load")
 
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: (UIFont(name: "Noteworthy", size: 25.0))!,
-            NSForegroundColorAttributeName : UIColor.white
+            NSAttributedStringKey.font: (UIFont(name: "Noteworthy", size: 25.0))!,
+            NSAttributedStringKey.foregroundColor : UIColor.white
         ]
         
         pageTitles.append("1")

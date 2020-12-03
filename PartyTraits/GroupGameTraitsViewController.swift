@@ -356,7 +356,7 @@ class GroupGameTraitsViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
-    func ViewTraitClicked(_ sender: UIButton!) {
+    @objc func ViewTraitClicked(_ sender: UIButton!) {
         
         //let TempSelectedTrait = TraitInventory()
         
@@ -491,7 +491,7 @@ class GroupGameTraitsViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
-    func EditPlayerClicked(_ sender: UIButton!) {
+    @objc func EditPlayerClicked(_ sender: UIButton!) {
         
         //let TempSelectedTrait = TraitInventory()
         
@@ -838,7 +838,7 @@ class GroupGameTraitsViewController: UIViewController, UITableViewDelegate, UITa
     
     }
     
-    func SendTextClicked(_ sender: UIButton!) {
+    @objc func SendTextClicked(_ sender: UIButton!) {
         
         //let TempSelectedTrait = TraitInventory()
         

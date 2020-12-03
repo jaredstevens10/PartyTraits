@@ -142,7 +142,7 @@ class NewGameSettingsViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     
-    func updateTimerLBLName() {
+    @objc func updateTimerLBLName() {
         let timerString = prefs.value(forKey: "TimerGameTimeLBL") as! String
         self.timerLBL.text = "\(timerString)"
         

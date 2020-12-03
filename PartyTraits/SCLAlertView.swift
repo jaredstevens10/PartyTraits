@@ -1381,7 +1381,7 @@ open class SCLAlertView: UIViewController {
         return btn
     }
     
-    func buttonTapped(_ btn:SCLButton) {
+    @objc func buttonTapped(_ btn:SCLButton) {
         if btn.actionType == SCLActionType.closure {
             btn.action()
         } else if btn.actionType == SCLActionType.selector {
@@ -1395,7 +1395,7 @@ open class SCLAlertView: UIViewController {
     }
     
     
-    func buttonTapDown(_ btn:SCLButton) {
+    @objc func buttonTapDown(_ btn:SCLButton) {
         var hue : CGFloat = 0
         var saturation : CGFloat = 0
         var brightness : CGFloat = 0
@@ -1405,12 +1405,12 @@ open class SCLAlertView: UIViewController {
         btn.backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
     }
     
-    func buttonRelease(_ btn:SCLButton) {
+    @objc func buttonRelease(_ btn:SCLButton) {
         btn.backgroundColor = viewColor
     }
     
     //Dismiss keyboard when tapped outside textfield
-    func dismissKeyboard(){
+    @objc func dismissKeyboard(){
         self.view.endEditing(true)
     }
     
@@ -1526,7 +1526,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -1696,7 +1696,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -1827,7 +1827,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -1968,7 +1968,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -2115,7 +2115,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -2264,7 +2264,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -2380,7 +2380,7 @@ open class SCLAlertView: UIViewController {
             viewText.text = subTitle
             // Adjust text view size, if necessary
             let str = subTitle as NSString
-            let attr = [NSFontAttributeName:viewText.font ?? UIFont()]
+            let attr = [NSAttributedStringKey.font:viewText.font ?? UIFont()]
             let sz = CGSize(width: kWindowWidth - 24, height:90)
             let r = str.boundingRect(with: sz, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attr, context:nil)
             let ht = ceil(r.size.height)
@@ -2440,7 +2440,7 @@ open class SCLAlertView: UIViewController {
     }
     
     // Close SCLAlertView
-    open func hideView() {
+    @objc open func hideView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.view.alpha = 0
             }, completion: { finished in
@@ -2450,7 +2450,7 @@ open class SCLAlertView: UIViewController {
     }
     
     //Save TextField
-    open func SaveTextFieldView() {
+    @objc open func SaveTextFieldView() {
         UIView.animate(withDuration: 0.2, animations: {
             self.view.alpha = 0
         }, completion: { finished in

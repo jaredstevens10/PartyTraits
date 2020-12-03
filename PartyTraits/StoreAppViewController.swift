@@ -45,7 +45,7 @@ class StoreAppViewController: UIViewController, UITableViewDataSource, UITableVi
         self.restorepurchaseBTN.layer.borderColor = UIColor.white.cgColor
         
         if let font = UIFont(name: "Noteworthy", size: 25.0) {
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.white]
+            self.navigationController!.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.white]
             
             // NSNotificationCenter.defaultCenter().postNotificationName("updateLoader", object: nil, userInfo: nil);
         }
@@ -146,7 +146,7 @@ class StoreAppViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func buyProduct(_ sender: UIButton) {
+    @objc func buyProduct(_ sender: UIButton) {
         let payment = SKPayment(product: productsArray[sender.tag])
         print("buying product = payment = \(payment)")
         print("Target Project = \(productsArray[sender.tag].localizedTitle)")
@@ -202,7 +202,7 @@ class StoreAppViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func restorePurchases(_ sender: UIButton) {
+    @objc func restorePurchases(_ sender: UIButton) {
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
@@ -326,7 +326,8 @@ class StoreAppViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.restoreButton?.layer.borderWidth = 1
                 cell.restoreButton?.layer.borderColor = UIColor.white.cgColor
                 
-                cell.addButton?.addTarget(self, action: #selector(StoreAppViewController.buyProduct(_:)), for: UIControlEvents.touchUpInside)
+                cell.addButton?.addTarget(self, action: #selector(StoreAppViewController.buyProduct(_:)), for:
+                    UIControlEvents.touchUpInside)
                 cell.addButton?.layer.cornerRadius = 30
                 cell.addButton?.layer.borderWidth = 1
                 cell.addButton?.layer.borderColor = UIColor.white.cgColor
@@ -360,7 +361,8 @@ class StoreAppViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 cell.buyButton?.tag = (indexPath as NSIndexPath).row
                 
-                cell.buyButton?.addTarget(self, action: #selector(StoreAppViewController.buyProduct(_:)), for: UIControlEvents.touchUpInside)
+                cell.buyButton?.addTarget(self, action: #selector(StoreAppViewController.buyProduct(_:)), for:
+                    UIControlEvents.touchUpInside)
                 
                 cell.buyButton?.layer.cornerRadius = 30
                 

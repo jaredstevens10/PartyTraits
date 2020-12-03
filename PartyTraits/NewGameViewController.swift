@@ -764,7 +764,7 @@ import GoogleMobileAds
         
     }
     
-    func DismissKeyboard(){
+    @objc func DismissKeyboard(){
         view.endEditing(true)
     }
     

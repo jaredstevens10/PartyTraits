@@ -31,7 +31,7 @@ class HowToViewController: UIViewController {
         
         self.title = "How To Play"
         if let font = UIFont(name: "Noteworthy", size: 25.0) {
-            self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.white]
+            self.navigationController!.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.white]
         }
         
         navigationController!.navigationBar.barTintColor = UIColor.black
